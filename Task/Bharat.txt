@@ -1,0 +1,13 @@
+ #!/bin/bash
+file1="Ram.txt"
+file2="Sita.txt"
+
+# Loop through each name in file1
+while read -r name; do
+    if grep -Fxq "$name" "$file2"; then
+        echo "hello $name"
+    else
+        echo "hi $name"
+    fi
+done < "$file1"
+
